@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Fredoka One";
+  src: url("../fonts/FredokaOne-Regular.eot");
+  src: local("Fredoka One"), local("FredokaOne-Regular"),
+    url("../fonts/FredokaOne-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/FredokaOne-Regular.woff2") format("woff2"),
+    url("../fonts/FredokaOne-Regular.woff") format("woff"),
+    url("../fonts/FredokaOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #3c3836;
+  --color-board: #1d2021;
+  --color-square: #282828;
+  --color-square-hover: #3c3836;
+  --color-text-square: #ebdbb2;
+  --color-text-hover: #d79921;
+  --color-bg-blue: #458588;
+  --color-bg-gray: #a89984;
+  --color-bg-aqua: #689d6a;
+}
+
+.background-wrapper {
+  @apply w-full h-screen grid place-items-center;
+  background-color: var(--color-bg);
+}
+
+.board {
+  @apply rounded-2xl p-7;
+  background-color: var(--color-board);
+}
+
+.game-pad {
+  @apply grid gap-3 mb-6;
+  grid-template-columns: repeat(3, 80px);
+}
+
+.square {
+  @apply text-7xl grid place-items-center rounded-lg size-20 focus:outline-none;
+  color: var(--color-text-square);
+  background-color: var(--color-square);
+}
+
+.square.winner {
+  color: var(--color-text-hover);
+}
+
+.board-btn {
+  @apply text-2xl rounded-lg bg-gray-800 px-4 py-2 w-full focus:outline-none;
+  background-color: var(--color-text-square);
+}
+
+@media (min-width: 1024px) {
+  .square:hover {
+    background-color: var(--color-square-hover);
+  }
+
+  .board-btn:hover {
+    background-color: var(--color-text-hover);
+  }
+}
+
+.restart-btn {
+  @apply text-2xl rounded-lg bg-gray-800 px-4 py-2 focus:outline-none;
+  background-color: var(--color-text-square);
+}
+
+.restart-btn:hover {
+  background-color: var(--color-text-hover);
+}
+
+.winners-counter {
+  @apply grid gap-3 mb-6;
+  grid-template-columns: repeat(3, 80px);
+}
+
+.winner-box {
+  @apply rounded-lg size-20 flex flex-col items-center justify-center gap-1;
+  background-color: var(--color-square);
+  color: var(--color-text-square);
+}
+
+.bg-blue {
+  background-color: var(--color-bg-blue);
+}
+
+.bg-gray {
+  background-color: var(--color-bg-gray);
+}
+
+.bg-agua {
+  background-color: var(--color-bg-aqua);
+}
